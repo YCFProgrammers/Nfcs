@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tarjeta digital</title>
+<meta name="description" content="Tarjeta de presentación digital">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="/Nfcs/nfc-1/style.css">
+</head>
+<body>
+
+  <!-- Password gate: shown only if data.js defines a password. Client-side only, see README. -->
+  <!-- <div class="gate" id="gate" hidden>
+    <form class="gate__form" id="gateForm" autocomplete="off">
+      <p class="gate__label">Esta tarjeta es privada</p>
+      <input class="gate__input" id="gateInput" type="password" placeholder="Contraseña" inputmode="text" autofocus>
+      <button class="gate__submit" type="submit">Entrar</button>
+      <p class="gate__error" id="gateError" hidden>Contraseña incorrecta</p>
+    </form>
+  </div> -->
+
+  <main class="stage">
+    <section class="card" id="card">
+
+      <header class="id">
+        <div class="id__avatar" id="avatar"></div>
+        <h1 class="id__name" id="name"></h1>
+        <p class="id__role" id="role"></p>
+      </header>
+
+      <div class="rule"></div>
+
+      <nav class="links" id="links"></nav>
+
+      <footer class="foot">
+        <p class="foot__text" id="footText"></p>
+      </footer>
+
+    </section>
+  </main>
+
+  <script src="/Nfcs/nfc-1/data.js"></script>
+  <script src="/Nfcs/nfc-1/script.js"></script>
+</body>
+</html>
