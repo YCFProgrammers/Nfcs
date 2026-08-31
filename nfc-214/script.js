@@ -171,10 +171,10 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
-  if (CARD.password){
-    const unlocked = initGate(CARD);
-    if (!unlocked) return; // el render pasa cuando se desbloquea
-  }
+  // if (CARD.password){
+  //   const unlocked = initGate(CARD);
+  //   if (!unlocked) return; // el render pasa cuando se desbloquea
+  // }
 
   renderCard(CARD);
 });
