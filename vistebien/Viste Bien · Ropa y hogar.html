@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Viste Bien · Ropa y hogar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Sora:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#090b10;--bg2:#10141c;--ink:#ece8df;--mute:#9a9fab;--line:rgba(255,255,255,.1);--glass:rgba(255,255,255,.04);--gold:#d9bc8c;--cyan:#7fe0d6;--wa:#25d366;--onacc:#0b0d12;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#f6f4ef;--bg2:#ece8df;--ink:#16181f;--mute:#5d6270;--line:rgba(0,0,0,.12);--glass:rgba(255,255,255,.7);--gold:#8a6a35;--cyan:#0f6e68;--onacc:#fff}}
+:root[data-theme="light"]{--bg:#f6f4ef;--bg2:#ece8df;--ink:#16181f;--mute:#5d6270;--line:rgba(0,0,0,.12);--glass:rgba(255,255,255,.7);--gold:#8a6a35;--cyan:#0f6e68;--onacc:#fff}
+html{scroll-behavior:smooth;scroll-padding-top:70px;height:100%}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:300 16px/1.65 Sora,system-ui,-apple-system,"Segoe UI",sans-serif;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.glow{position:fixed;inset:0;pointer-events:none;z-index:0;background:radial-gradient(420px circle at var(--x,50%) var(--y,30%),color-mix(in srgb,var(--cyan) 14%,transparent),transparent 70%)}
+section,header,footer{position:relative;z-index:1}
+.wrap{max-width:1080px;margin:auto;padding:0 22px}
+nav{position:fixed;top:0;left:0;right:0;z-index:10;display:flex;justify-content:space-between;align-items:center;padding:calc(10px + env(safe-area-inset-top,0px)) 22px 10px;backdrop-filter:blur(14px);background:color-mix(in srgb,var(--bg) 70%,transparent);border-bottom:1px solid var(--line)}
+.logo{font:400 30px "Great Vibes",cursive;color:var(--gold);line-height:1}
+nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0;font-size:14px}
+nav li a{color:var(--mute);transition:color .2s}nav li a:hover{color:var(--ink)}
+@media(max-width:640px){nav ul li:not(:last-child){display:none}}
+.btn{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:12px 24px;font:600 14px Sora,sans-serif;border:1px solid var(--line);cursor:pointer;transition:transform .2s,box-shadow .2s;color:var(--ink);background:var(--glass)}
+.btn:hover{transform:translateY(-2px)}
+.btn.wa{background:var(--wa);color:#07210f;border:0;box-shadow:0 0 0 0 rgba(37,211,102,.5);animation:pulse 2.8s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 14px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
+/* HERO */
+.hero{min-height:100vh;min-height:100svh;display:grid;place-items:center;text-align:center;overflow:hidden;padding:110px 0 60px}
+.aur{position:absolute;inset:-20%;z-index:-1;filter:blur(70px);opacity:.55}
+.aur i{position:absolute;border-radius:50%;animation:drift 18s ease-in-out infinite alternate}
+.aur i:nth-child(1){width:46vmax;height:46vmax;left:5%;top:5%;background:color-mix(in srgb,var(--gold) 55%,transparent)}
+.aur i:nth-child(2){width:40vmax;height:40vmax;right:0;top:20%;background:color-mix(in srgb,var(--cyan) 45%,transparent);animation-delay:-6s}
+@keyframes drift{to{transform:translate(8vw,6vh) scale(1.15)}}
+.grid{position:absolute;inset:0;z-index:-1;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(ellipse at center,#000 20%,transparent 70%);-webkit-mask-image:radial-gradient(ellipse at center,#000 20%,transparent 70%)}
+.ring{position:relative;width:min(88vw,520px);aspect-ratio:1;margin:auto;display:grid;place-items:center}
+.ring::before{content:"";position:absolute;inset:0;border-radius:50%;background:conic-gradient(from 0deg,transparent,var(--cyan),transparent 30%,var(--gold),transparent 60%);-webkit-mask:radial-gradient(circle,transparent 68%,#000 69%,#000 70%,transparent 71%);mask:radial-gradient(circle,transparent 68%,#000 69%,#000 70%,transparent 71%);animation:spin 14s linear infinite}
+.ring::after{content:"";position:absolute;inset:9%;border-radius:50%;border:1px dashed var(--line);animation:spin 40s linear infinite reverse}
+@keyframes spin{to{transform:rotate(360deg)}}
+.brand{font:400 clamp(64px,15vw,128px) "Great Vibes",cursive;line-height:1;margin:0;background:linear-gradient(100deg,var(--gold) 20%,#fff 45%,var(--gold) 55%,var(--cyan) 90%);background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 6s ease-in-out infinite,rise 1.4s cubic-bezier(.2,.8,.2,1) both}
+@keyframes shine{50%{background-position:100% 0}}
+@keyframes rise{from{opacity:0;filter:blur(14px);transform:scale(.92)}}
+.tag{font-size:clamp(15px,2.4vw,19px);color:var(--mute);margin:6px 0 0;animation:rise 1.4s .3s both}
+.tag b{color:var(--cyan);font-weight:600;display:inline-block;min-width:7ch;transition:opacity .3s,transform .3s}
+.cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:26px;animation:rise 1.4s .5s both}
+.scroll{position:absolute;bottom:22px;left:50%;width:22px;height:36px;border:1.5px solid var(--mute);border-radius:12px;transform:translateX(-50%)}
+.scroll::after{content:"";position:absolute;left:50%;top:7px;width:3px;height:7px;border-radius:2px;background:var(--cyan);transform:translateX(-50%);animation:dot 1.8s infinite}
+@keyframes dot{60%{transform:translate(-50%,12px);opacity:0}}
+/* MARQUEE */
+.mq{border-block:1px solid var(--line);overflow:hidden;background:var(--bg2);padding:14px 0}
+.mq div{display:flex;gap:48px;width:max-content;animation:mq 28s linear infinite;color:var(--mute);font-size:14px;letter-spacing:.14em}
+.mq span::after{content:"✦";margin-left:48px;color:var(--gold)}
+@keyframes mq{to{transform:translateX(-50%)}}
+/* SECCIONES */
+.sec{padding:96px 0}
+h2{font:400 clamp(40px,7vw,64px) "Great Vibes",cursive;margin:0 0 10px;color:var(--gold);line-height:1.1}
+.lead{max-width:60ch;color:var(--mute);margin:0 0 34px}
+.two{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+@media(max-width:760px){.two{grid-template-columns:1fr}}
+.card{background:var(--glass);border:1px solid var(--line);border-radius:18px;padding:22px;backdrop-filter:blur(8px);transition:transform .3s,border-color .3s}
+.card:hover{transform:translateY(-4px);border-color:var(--gold)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.card svg{width:34px;height:34px;stroke:var(--cyan);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;margin-bottom:12px}
+.card h3{margin:0 0 6px;font-size:17px;font-weight:600}.card p{margin:0;color:var(--mute);font-size:14.5px}
+.pills{display:flex;flex-wrap:wrap;gap:10px}
+.pills span{border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-size:14px;background:var(--glass)}
+/* PASOS */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;counter-reset:s}
+.step{position:relative;padding:22px;border-left:1px solid var(--gold)}
+.step::before{counter-increment:s;content:counter(s);font:400 44px "Great Vibes",cursive;color:var(--cyan);display:block;line-height:1}
+.step h3{margin:6px 0;font-size:16px;font-weight:600}.step p{margin:0;color:var(--mute);font-size:14.5px}
+/* CATALOGO */
+.tabs{display:flex;gap:8px;overflow-x:auto;padding-bottom:12px;margin-bottom:18px}
+.tabs button{white-space:nowrap;border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:999px;padding:8px 18px;font:400 14px Sora,sans-serif;cursor:pointer}
+.tabs button.on{background:var(--gold);color:var(--onacc);border-color:var(--gold);font-weight:600}
+.cat{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:16px}
+.p{border:1px solid var(--line);border-radius:18px;overflow:hidden;background:var(--glass);display:flex;flex-direction:column;transition:transform .3s,border-color .3s;animation:rise .6s both}
+.p:hover{transform:translateY(-5px);border-color:var(--cyan)}
+.ph{aspect-ratio:4/5;background-size:cover;background-position:center;position:relative}
+.ph em{position:absolute;left:10px;top:10px;font:600 11px Sora,sans-serif;font-style:normal;padding:4px 10px;border-radius:999px;background:rgba(0,0,0,.55);color:#fff;backdrop-filter:blur(6px)}
+.pi{padding:14px;display:flex;flex-direction:column;gap:4px;flex:1}
+.pi b{font-weight:600;font-size:15px}.pi small{color:var(--mute)}.pi .pr{color:var(--gold);font-weight:600;font-size:17px}
+.pi a{margin-top:auto;padding-top:10px;color:var(--wa);font-weight:600;font-size:14px}
+/* REDES */
+.soc{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+.soc a,.soc div{display:flex;align-items:center;gap:14px;padding:18px;border:1px solid var(--line);border-radius:16px;background:var(--glass);transition:transform .3s,border-color .3s}
+.soc a:hover{transform:translateY(-4px);border-color:var(--gold)}
+.soc div{opacity:.55}.soc small{display:block;color:var(--mute)}
+.soc svg{width:26px;height:26px;stroke:var(--gold);fill:none;stroke-width:1.5;flex:none}
+footer{border-top:1px solid var(--line);padding:34px 0 40px;text-align:center;color:var(--mute);font-size:14px}
+footer .logo{font-size:40px;display:block;margin-bottom:6px}
+.rv{opacity:0;transform:translateY(26px);transition:opacity .8s,transform .8s cubic-bezier(.2,.8,.2,1)}.rv.in{opacity:1;transform:none}
+.wafab{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:11;width:56px;height:56px;border-radius:50%;background:var(--wa);display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.35)}
+.wafab svg{width:28px;height:28px;fill:#fff}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="glow" id="glow"></div>
+<nav>
+  <a class="logo" href="#inicio">Viste Bien</a>
+  <ul><li><a href="#nosotros">Quiénes somos</a></li><li><a href="#porque">Por qué elegirnos</a></li><li><a href="#catalogo">Catálogo</a></li><li><a href="#redes">Redes</a></li></ul>
+</nav>
+
+<header class="hero" id="inicio">
+  <div class="aur"><i></i><i></i></div><div class="grid"></div>
+  <div class="wrap">
+    <div class="ring"><div>
+      <h1 class="brand">Viste Bien</h1>
+      <p class="tag">Ropa y hogar para <b id="rot">la novena</b></p>
+      <div class="cta">
+        <a class="btn wa" id="hwa" target="_blank" rel="noopener">Escríbenos por WhatsApp</a>
+        <a class="btn" href="#catalogo">Ver catálogo</a>
+      </div>
+    </div></div>
+  </div>
+  <span class="scroll" aria-hidden="true"></span>
+</header>
+
+<div class="mq" aria-hidden="true"><div id="mq"></div></div>
+
+<section class="sec" id="nosotros"><div class="wrap two">
+  <div class="rv">
+    <h2>Quiénes somos</h2>
+    <p class="lead" style="margin-bottom:16px">Somos un negocio familiar de ropa y hogar. Vestimos a toda la familia y también el hogar: dama, caballero, niños, medias, ropa interior, acolchados, sábanas y cortinas.</p>
+    <p class="lead" style="margin:0">Lo que no tenemos en físico lo conseguimos por encargo, en la talla y referencia que necesites, y te decimos desde el primer mensaje cuánto demora.</p>
+  </div>
+  <div class="card rv"><div class="pills"><span>Dama</span><span>Caballero</span><span>Niños</span><span>Medias</span><span>Ropa interior</span><span>Calzado</span><span>Acolchados</span><span>Sábanas</span><span>Cortinas</span></div></div>
+</div></section>
+
+<section class="sec" id="porque" style="background:var(--bg2)"><div class="wrap">
+  <h2 class="rv">Por qué elegirnos</h2><p class="lead rv">Cuatro razones que nuestros clientes notan desde el primer pedido.</p>
+  <div class="cards">
+    <div class="card rv"><svg viewBox="0 0 24 24"><path d="M3 7l9-4 9 4-9 4-9-4z"/><path d="M3 12l9 4 9-4M3 17l9 4 9-4"/></svg><h3>Todo en un solo lugar</h3><p>Ropa para toda la familia, medias, interior y hogar. Un solo pedido para varias cosas.</p></div>
+    <div class="card rv"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><h3>Encargos con tiempos claros</h3><p>Si no está en físico, lo pedimos por ti y te avisamos cuánto tarda antes de que decidas.</p></div>
+    <div class="card rv"><svg viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-11.5 7.2L4 20l1-4.5A8 8 0 1 1 21 12z"/></svg><h3>Atención directa</h3><p>Hablas con nosotros por WhatsApp. Te asesoramos con tallas, colores y combinaciones.</p></div>
+    <div class="card rv"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.6-9-9a5 5 0 0 1 9-3 5 5 0 0 1 9 3c-2 4.4-9 9-9 9z"/></svg><h3>Trato de familia</h3><p>Un negocio familiar que te conoce por tu nombre y cuida cada pedido.</p></div>
+  </div>
+</div></section>
+
+<section class="sec"><div class="wrap">
+  <h2 class="rv">Así pides</h2><p class="lead rv">Cuatro pasos, sin complicaciones.</p>
+  <div class="steps">
+    <div class="step rv"><h3>Elige</h3><p>Mira el catálogo y toca la prenda que te guste.</p></div>
+    <div class="step rv"><h3>Escríbenos</h3><p>Se abre WhatsApp con el mensaje ya listo. Solo dinos tu talla.</p></div>
+    <div class="step rv"><h3>Confirmamos</h3><p>Te decimos si está disponible o si es por encargo y cuánto demora.</p></div>
+    <div class="step rv"><h3>Recibe</h3><p>Coordinamos el pago y la entrega por el mismo chat.</p></div>
+  </div>
+</div></section>
+
+<section class="sec" id="catalogo" style="background:var(--bg2)"><div class="wrap">
+  <h2 class="rv">Catálogo</h2><p class="lead rv">Toca "Pedir" en cualquier prenda y te respondemos con disponibilidad y tallas.</p>
+  <div class="tabs" id="tabs"></div><div class="cat" id="cat"></div>
+</div></section>
+
+<section class="sec" id="redes"><div class="wrap">
+  <h2 class="rv">Síguenos</h2><p class="lead rv">Novedades, ideas para combinar y pedidos nuevos cada semana.</p>
+  <div class="soc rv" id="soc"></div>
+</div></section>
+
+<footer><div class="wrap"><span class="logo">Viste Bien</span>Ropa y hogar para toda la familia · +57 312 789 1090</div></footer>
+
+<a class="wafab" id="fab" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" style="fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M21 12a8 8 0 0 1-11.5 7.2L4 20l1-4.5A8 8 0 1 1 21 12z"/></svg></a>
+
+<script>
+/* ======== CONFIGURACIÓN: edita aquí ======== */
+const WA="573127891090";
+const REDES=[ // pon el enlace completo; si lo dejas vacío aparece como "Próximamente"
+ {n:"Instagram",u:"",i:'<rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.500" cy="6.500" r=".8"/>'},
+ {n:"Facebook",u:"",i:'<path d="M14 8h3V4h-3a4 4 0 0 0-4 4v3H7v4h3v6h4v-6h3l1-4h-4V8z"/>'},
+ {n:"TikTok",u:"",i:'<path d="M14 3v11a4 4 0 1 1-4-4M14 3c0 3 2 5 5 5"/>'}
+];
+/* cat: Dama | Caballero | Niños | Calzado | Hogar | Medias e interior
+   foto: enlace o imagen base64 (opcional). Sin foto se muestra un color. */
+const CATALOGO=[
+ {nombre:"Blusa de lino",cat:"Dama",precio:68000,disp:"Disponible",tallas:"S · M · L",color:"#c9b79a"},
+ {nombre:"Vestido floral",cat:"Dama",precio:119000,disp:"Por encargo",tallas:"S · M · L · XL",color:"#b0607a"},
+ {nombre:"Jean tiro alto",cat:"Dama",precio:98000,disp:"Disponible",tallas:"6 al 14",color:"#35527a"},
+ {nombre:"Camisa manga corta",cat:"Caballero",precio:72000,disp:"Disponible",tallas:"S · M · L · XL",color:"#4a7bb7"},
+ {nombre:"Pantalón de vestir",cat:"Caballero",precio:89000,disp:"Disponible",tallas:"30 al 36",color:"#4b4f58"},
+ {nombre:"Camiseta estampada",cat:"Niños",precio:35000,disp:"Disponible",tallas:"4 al 12",color:"#e0a243"},
+ {nombre:"Jean para niño",cat:"Niños",precio:52000,disp:"Disponible",tallas:"4 al 12",color:"#456a9c"},
+ {nombre:"Zapato casual",cat:"Calzado",precio:135000,disp:"Por encargo",tallas:"35 al 43",color:"#6b4a38"},
+ {nombre:"Medias de algodón",cat:"Medias e interior",precio:9000,disp:"Disponible",tallas:"Única",color:"#8b93a3"},
+ {nombre:"Bóxer de algodón",cat:"Medias e interior",precio:22000,disp:"Disponible",tallas:"S · M · L · XL",color:"#2f4b7c"},
+ {nombre:"Acolchado",cat:"Hogar",precio:185000,disp:"Por encargo",tallas:"Sencillo · Doble · King",color:"#7d8fa3"},
+ {nombre:"Juego de sábanas",cat:"Hogar",precio:79000,disp:"Disponible",tallas:"Sencillo · Doble · King",color:"#a9bdcc"},
+ {nombre:"Cortinas (par)",cat:"Hogar",precio:95000,disp:"Por encargo",tallas:"1.5 m · 2 m · 2.5 m",color:"#cdbfa9"}
+];
+const FRASES=["la novena","la oficina","la cena de Navidad","Año Nuevo","tu hogar","toda la familia"];
+/* =========================================== */
+
+const $=id=>document.getElementById(id),COP=n=>"$"+n.toLocaleString("es-CO");
+const wa=t=>`https://wa.me/${WA}?text=${encodeURIComponent(t)}`;
+$("hwa").href=$("fab").href=wa("Hola Viste Bien, quiero información.");
+$("mq").innerHTML=[...Array(2)].map(()=>["Dama","Caballero","Niños","Medias","Ropa interior","Calzado por encargo","Acolchados","Sábanas","Cortinas"].map(x=>`<span>${x}</span>`).join("")).join("");
+
+// catálogo
+const cats=["Todo",...new Set(CATALOGO.map(p=>p.cat))];let cur="Todo";
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+function draw(){
+  $("tabs").innerHTML=cats.map(c=>`<button class="${c===cur?"on":""}" data-c="${esc(c)}">${esc(c)}</button>`).join("");
+  $("cat").innerHTML=CATALOGO.filter(p=>cur==="Todo"||p.cat===cur).map((p,i)=>{
+    const bg=p.foto?`background-image:url('${esc(p.foto)}')`:`background:linear-gradient(160deg,${p.color},color-mix(in srgb,${p.color} 40%,#000))`;
+    return `<div class="p" style="animation-delay:${i*.05}s"><div class="ph" style="${bg}"><em>${esc(p.disp)}</em></div>
+    <div class="pi"><b>${esc(p.nombre)}</b><small>Tallas: ${esc(p.tallas)}</small><span class="pr">${COP(p.precio)}</span>
+    <a target="_blank" rel="noopener" href="${wa(`Hola Viste Bien, me interesa: ${p.nombre} (${COP(p.precio)}). ¿Tienen disponibilidad?`)}">Pedir por WhatsApp</a></div></div>`}).join("");
+}
+$("tabs").onclick=e=>{const b=e.target.closest("[data-c]");if(b){cur=b.dataset.c;draw()}};draw();
+
+// redes
+$("soc").innerHTML=REDES.map(r=>{const ic=`<svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">${r.i}</svg>`;
+  return r.u?`<a href="${esc(r.u)}" target="_blank" rel="noopener">${ic}<span>${r.n}<small>Síguenos</small></span></a>`:`<div>${ic}<span>${r.n}<small>Próximamente</small></span></div>`}).join("")
+  +`<a href="${wa("Hola Viste Bien")}" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.5 7.2L4 20l1-4.5A8 8 0 1 1 21 12z"/></svg><span>WhatsApp<small>+57 312 789 1090</small></span></a>`;
+
+// frases rotativas
+let k=0;const rot=$("rot");setInterval(()=>{rot.style.opacity=0;rot.style.transform="translateY(8px)";setTimeout(()=>{k=(k+1)%FRASES.length;rot.textContent=FRASES[k];rot.style.opacity=1;rot.style.transform="none"},300)},2600);
+
+// luz que sigue el cursor
+addEventListener("pointermove",e=>{const g=$("glow").style;g.setProperty("--x",e.clientX+"px");g.setProperty("--y",e.clientY+"px")},{passive:true});
+
+// aparición al hacer scroll
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.15});
+document.querySelectorAll(".rv").forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
